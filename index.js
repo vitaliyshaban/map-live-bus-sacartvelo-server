@@ -61,7 +61,6 @@ async function getPositionBus(id) {
 
 
 const port = 9000
-const host = 'localhost'
-app.listen(port, host, () => {
-  console.log(`Example app listening at: ${host}:${port}`)
+app.listen(port, () => {
+  console.log(`Example app listening at: ${port}`)
 })
