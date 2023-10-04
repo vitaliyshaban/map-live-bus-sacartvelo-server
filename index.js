@@ -1,62 +1,84 @@
-const express = require('express')
+const express = require('express');
+const graphqlHTTP = require('express-graphql').graphqlHTTP;
 
 const cors = require('cors');
-// const fetch = require('node-fetch');
 const axios = require('axios');
 const cron = require('node-cron');
+
+const schema = require('./schema');
+const buses = require('./buses');
+
+
+const baseURL = 'http://transport.geogps.ge/get-live-bus-stop-time';
+
+console.log(buses)
+
+
+const root = {
+  getAllBuses: () => {
+    return buses;
+  },
+  getBus: ({id}) => {
+    return buses.find(bus => bus.id == id)
+  }
+};
+
+
 const app = express();
 
 app.use(cors());
-// var liveStreamRadio = require('lsr-wrapper');
 
-// var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "1234-5678-9012-3456");
-
-
-// app.use(cors({
-//   origin: 'http://192.168.1.77'
-// }));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
+app.get('/', (req, res) => res.send('GraphQL Server is running'))
 
-app.get('/', (req, res) => {
-  res.json({});
-})
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
+  })
+);
 
-let busJson = [];
 
-app.get('/getBuses', function(req, res) {
-	res.json(busJson);
+
+// cron.schedule('*/8 * * * * *', () => {
+//   console.log('start update ...')
+//   getDataRoutes().then(()=> {
+//     // busJson = buses;
+//     console.log('end update.')
+//   });
+// });
+
+
+getDataRoutes().then(()=> {
+  setInterval(() => {
+    buses[0].number = Math.floor(Math.random() * 100);
+    console.log(buses[0].number)
+    
+  }, 1000)
 });
 
 
 
-cron.schedule('*/5 * * * * *', () => {
-	// console.log('5s');
-	getPositionBus("5ed608b7340f60873ff9e1c0").then((result) => {
-		busJson = result.data;
-	})
-});
-
-async function getPositionBus(id) {
-  try {
-  	// console.log(region)
-    return await axios( 
-    	{
-			method: 'post',
-		    url: `http://transport.geogps.ge/get-live-bus-stop-time`,
-    		params: {
-    			routeId: id
-    		},
-			headers: { "Content-Type": "application/json" }
-    	}
-    );
-  } catch (error) {
-    console.error(error);
-  }
+async function getDataRoutes() {
+  await Promise.all(buses.map(async (bus) => {
+      let routeDate = await axios({
+        method: 'post',
+          url: `http://transport.geogps.ge/get-live-bus-stop-time`,
+          params: {
+            routeId: bus.busid
+          },
+        headers: { "Content-Type": "application/json" }
+      });
+      // console.log(routeDate)
+      bus.data = routeDate.data;
+  }));
 }
 
 

@@ -1,0 +1,142 @@
+[
+  {
+    "id": 0,
+    "busid": "60acde9ffcc7a224160c587c",
+    "number": "01",
+    "descr": "მარშრუტი 01",
+    "data": null
+  },
+  {
+    "id": 1,
+    "busid": "5ed60715340f60873ff9e1bd",
+    "number": "01ა",
+    "descr": "მარშრუტი 01ა",
+    "data": null
+  },
+  {
+    "id": 2,
+    "busid": "5ed2bd4f657784b5a98a8c7e",
+    "number": "02",
+    "descr": "მარშრუტი 02",
+    "data": null
+  },
+  {
+    "id": 3,
+    "busid": "5ed6077c340f60873ff9e1be",
+    "number": "02ა",
+    "descr": "მარშრუტი 02ა",
+    "data": null
+  },
+  {
+    "id": 4,
+    "busid": "5ed60865340f60873ff9e1bf",
+    "number": "03",
+    "descr": "მარშრუტი 03",
+    "data": null
+  },
+  {
+    "id": 5,
+    "busid": "5ed608b7340f60873ff9e1c0",
+    "number": "04",
+    "descr": "მარშრუტი 04",
+    "data": null
+  },
+  {
+    "id": 6,
+    "busid": "5f9f0704eb714303efce5631",
+    "number": "06",
+    "descr": "მარშრუტი 06",
+    "data": null
+  },
+  {
+    "id": 7,
+    "busid": "5ed6097f340f60873ff9e1c2",
+    "number": "07",
+    "descr": "მარშრუტი 07",
+    "data": null
+  },
+  {
+    "id": 8,
+    "busid": "5ed609dc340f60873ff9e1c3",
+    "number": "07ა",
+    "descr": "მარშრუტი 07ა",
+    "data": null
+  },
+  {
+    "id": 9,
+    "busid": "5ed60aa5340f60873ff9e1c4",
+    "number": "08",
+    "descr": "მარშრუტი 08",
+    "data": null
+  },
+  {
+    "id": 10,
+    "busid": "5ed60b25340f60873ff9e1c5",
+    "number": "09",
+    "descr": "მარშრუტი 09",
+    "data": null
+  },
+  {
+    "id": 11,
+    "busid": "5ed4ac74de88ce09ecf66f9c",
+    "number": "10",
+    "descr": "მარშრუტი 10",
+    "data": null
+  },
+  {
+    "id": 12,
+    "busid": "5ed60be3340f60873ff9e1c6",
+    "number": "10ა",
+    "descr": "მარშრუტი 10ა",
+    "data": null
+  },
+  {
+    "id": 13,
+    "busid": "5ed60c22340f60873ff9e1c7",
+    "number": "11",
+    "descr": "მარშრუტი 11",
+    "data": null
+  },
+  {
+    "id": 14,
+    "busid": "5ed60d70340f60873ff9e1c8",
+    "number": "12",
+    "descr": "მარშრუტი 12",
+    "data": null
+  },
+  {
+    "id": 15,
+    "busid": "5ed60dd1340f60873ff9e1c9",
+    "number": "12ა",
+    "descr": "მარშრუტი 12ა",
+    "data": null
+  },
+  {
+    "id": 16,
+    "busid": "5fa10a6eb60ec3ccafce93f7",
+    "number": "13",
+    "descr": "მარშრუტი 13",
+    "data": null
+  },
+  {
+    "id": 17,
+    "busid": "615182e95dc186cad86e0fd2",
+    "number": "14",
+    "descr": "მარშრუტი 14",
+    "data": null
+  },
+  {
+    "id": 18,
+    "busid": "5ed60e97340f60873ff9e1cb",
+    "number": "15",
+    "descr": "მარშრუტი 15",
+    "data": null
+  },
+  {
+    "id": 19,
+    "busid": "5ed60f32340f60873ff9e1cc",
+    "number": "16",
+    "descr": "მარშრუტი 16",
+    "data": null
+  }
+]

@@ -4,14 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "dev2": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-server": "^3.6.7",
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
     "axios": "^0.26.1",
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "node-cron": "^3.0.0"
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-type-json": "^0.3.2",
+    "graphql-ws": "^5.7.0",
+    "http": "^0.0.1-security",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.15",
+    "ws": "^8.5.0"
   }
 }
